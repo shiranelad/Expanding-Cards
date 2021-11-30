@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Muli', sans-serif;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw; /* will take 90/100 of the view port width */
+}
+
+.panel{
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    height:80vh;
+    color:#fff;
+    cursor:pointer;
+    margin: 5px;
+    border-radius: 20px;
+    flex: 0.5; /* makes all bars be of equal width, and will set the active to a higher value */
+    position:relative;
+    transition: flex 0.7s ease-in; /* when we click the active, we want to have a transition */ 
+}
+
+.panel h3{
+    position:absolute;
+    font-size: 24px;
+    bottom: 20px;
+    left:20px;
+    margin: 0; 
+    opacity: 0 ; /* I only want to see the text on the active image */
+}
+
+.panel.active{
+    flex: 10;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s; /* transition on the opacity, and delay so that it doesn't appear weird */
+}
+
+@media (max-width:480px) {
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(n+5){
+        display:none;
+    }
+    
+}
