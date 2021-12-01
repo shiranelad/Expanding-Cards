@@ -55,11 +55,16 @@ body{
     flex-direction: column;
 
 }
-@media (max-width:480px) {
+@media (max-width:980px) {
     .container{
         width: 100vw;
     }
 
+    .panel.active{
+        height:auto;
+        max-width: 100%;
+    }
+    
     .panel:nth-of-type(n+5){
         display:none;
     }
